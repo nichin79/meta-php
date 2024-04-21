@@ -11,7 +11,7 @@
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
-      "Nichin79\\Metas\\": "src/"
+      "Nichin79\\Meta\\": "src/"
     }
   },
   "require": {

@@ -1,9 +1,9 @@
 <?php
-namespace Nichin79\Metas;
+namespace Nichin79\Meta;
 
 use Nichin79\Curl\BasicCurl;
 
-class Metas
+class Meta
 {
   private object $doc;
   protected array $data = [];
