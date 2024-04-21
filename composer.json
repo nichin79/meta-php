@@ -1,0 +1,20 @@
+{
+  "name": "nichin79/meta-php",
+  "description": "Class for getting title and meta tags from url",
+  "type": "library",
+  "authors": [
+      {
+          "name": "Nicklas H",
+          "email": "nicklas@imagineit.nu"
+      }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Nichin79\\Metas\\": "src/"
+    }
+  },
+  "require": {
+      "nichin79/curl-php": "^1.0"
+  }
+}
