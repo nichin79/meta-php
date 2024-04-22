@@ -2,6 +2,7 @@
 namespace Nichin79\Meta;
 
 use Nichin79\Curl\BasicCurl;
+use Nichin79\Curl\Curl;
 
 class Meta
 {
@@ -17,8 +18,12 @@ class Meta
     if (!filter_var($this->url, FILTER_VALIDATE_URL)) {
       throw new \Exception("Invalid URL (" . $this->url . ")");
     }
-
-    $this->curl = new BasicCurl(['url' => $this->url]);
+    $this->curl = new BasicCurl([
+      'url' => $this->url,
+      'options' => [
+        'ENCODING' => 'gzip'
+      ]
+    ]);
 
     if (substr($this->curl->httpcode, 0, 2) == 20) {
       $this->doc();
@@ -41,8 +46,10 @@ class Meta
   {
     if (isset($this->doc)) {
       $nodes = $this->doc->getElementsByTagName('title');
-      $title = trim($nodes->item(0)->nodeValue);
-      return ['title' => $title];
+      // $title = trim($nodes->item(0)->nodeValue);
+      print_r($nodes->item(0));
+      return [];
+      // return ['title' => $title];
     }
   }
 
