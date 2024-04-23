@@ -46,10 +46,8 @@ class Meta
   {
     if (isset($this->doc)) {
       $nodes = $this->doc->getElementsByTagName('title');
-      // $title = trim($nodes->item(0)->nodeValue);
-      print_r($nodes->item(0));
-      return [];
-      // return ['title' => $title];
+      $title = trim($nodes->item(0)->nodeValue);
+      return ['title' => $title];
     }
   }
 
